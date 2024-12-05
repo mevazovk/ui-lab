@@ -1,12 +1,20 @@
-import "./index.css"
+import React from 'react';
+import './index.css';
 
-function Button(props){
-const {variant = "primary", children} = props
-const className = `my-button my-button--${variant}`; 
+function Button(props) {
+    const { variant = "primary", size = "med", children } = props;
 
-    return(
-        <button className={className}>{children}</button>
-    )
+
+    const sizeClass = `my-button--${size}`;
+
+
+    const className = `my-button my-button--${variant} ${sizeClass}`;
+
+    return (
+        <button className={className}>
+            {children}
+        </button>
+    );
 }
 
-export default Button
+export default Button;
